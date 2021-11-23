@@ -45,6 +45,16 @@ app.get('/shops', async function (req, res) {
 	});
 });
 
+app.get('/addShops', async function (req, res) {
+	//var name = req.params.name;
+	// var findId = await avoInsta.getShopId(shopName);
+	// console.log(shopName);
+	
+
+	res.render('addShops');
+
+});
+
 app.post('/newShop', async function (req, res) {
 
 	try {
@@ -61,11 +71,9 @@ app.post('/newShop', async function (req, res) {
 
 app.get('/shops/:name', async function (req, res) {
 	var shopName = req.params.name;
-	// var findId = await avoInsta.getShopId(shopName);
-	// console.log(shopName);
-	console.log(shopName, "ihiihiihihihihih");
 
-	res.render('addDeals', {shopName});
+	res.render('addDeals', {name: shopName}
+	);
 
 });
 
@@ -80,7 +88,7 @@ console.log(shopName + "dfghjklkiiii")
 // var qty = req.body.qty;
 
 //var addDealForShop  = await avoInsta.createDeal(findId,qty,price);
-		res.redirect('/shops/:name');
+res.redirect(`/shops/${shopName}`);
 	} catch (err) {
 		console.log(err)
 	}
