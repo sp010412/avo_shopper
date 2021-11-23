@@ -41,7 +41,7 @@ app.get('/', function (req, res) {
 
 app.get('/shops', async function (req, res) {
 	res.render('shops', {
-		shops: await avoInsta.listShops();
+		shops: await avoInsta.listShops()
 	});
 });
 
