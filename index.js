@@ -80,8 +80,8 @@ app.get('/shops/:name', async function (req, res) {
 
 app.post('/shops/:name', async function (req, res) {
 	try {
-var shopName = req.params.name;
-console.log(shopName + "dfghjklkiiii")
+// var shopName = req.params.name;
+// console.log(shopName + "dfghjklkiiii")
 
 // var findId = await avoInsta.getShopId(shopName);
 // var price = req.body.price;
