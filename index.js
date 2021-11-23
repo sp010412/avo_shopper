@@ -79,7 +79,7 @@ app.get('/shops/:name', async function (req, res) {
 
 
 app.post('/shops/:name', async function (req, res) {
-	try {
+	
 // var shopName = req.params.name;
 // console.log(shopName + "dfghjklkiiii")
 
@@ -89,14 +89,8 @@ app.post('/shops/:name', async function (req, res) {
 
 //var addDealForShop  = await avoInsta.createDeal(findId,qty,price);
 res.redirect(`/shops/${shopName}`);
-	} catch (err) {
-		console.log(err)
-	}
+	
 });
-
-
-
-
 
 
 
