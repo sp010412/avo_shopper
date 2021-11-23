@@ -12,6 +12,10 @@ module.exports = function(pool) {
 		const result = await pool.query(`select * from shop`);
 		return result.rows;
 	}
+	async function getShopId(nam){
+		const db = await pool.query('select id from shop where name = $1', [nam]);
+		return db.rows[0].id;
+	}
 
 	async function dealsForShop(shopId) {
 		const result = await pool.query(`select * from avo_deal where shop_id = $1`, [shopId]);
@@ -49,7 +53,8 @@ module.exports = function(pool) {
 		listShops,
 		dealsForShop,
 		recommendDeals,
-		topFiveDeals
+		topFiveDeals, 
+		getShopId
 	}
 
 

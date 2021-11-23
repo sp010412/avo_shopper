@@ -1,3 +1,4 @@
+-- create database avo_shopper;
 create table shop(
 	id serial not null primary key,
 	name text not null unique
