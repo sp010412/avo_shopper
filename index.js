@@ -41,7 +41,7 @@ app.get('/', function (req, res) {
 
 app.get('/shops', async function (req, res) {
 	res.render('shops', {
-		shops: await avoInsta.listShops()
+		shops: await avoInsta.listShops();
 	});
 });
 
@@ -69,7 +69,7 @@ app.post('/newShop', async function (req, res) {
 });
 
 
-app.get('/shops/:name', async function (req, res) {
+app.get('/shops/:name', function (req, res) {
 	var shopName = req.params.name;
 
 	res.render('addDeals', {
